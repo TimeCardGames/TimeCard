@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 27e43a4f006315643858544cea8b7622
-timeCreated: 1463286424
+timeCreated: 1463354819
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cam: {instanceID: 0}
+  - minion: {fileID: 133340, guid: 347499420d7e7df409555a835e8acf96, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

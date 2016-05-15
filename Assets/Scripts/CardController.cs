@@ -33,7 +33,22 @@ public class CardController : MonoBehaviour {
     void Update()
     {
 
-    } 
+    }
+
+    void OnMouseEnter()
+    {
+        var sr = GetComponent<SpriteRenderer>();
+        sr.color = new Color(0.75f, 0.75f, 0.75f, 1);
+    }
+
+    void OnMouseExit()
+    {
+        if (!selected)
+        {
+            var sr = GetComponent<SpriteRenderer>();
+            sr.color = new Color(1.0f, 1.0f, 1.0f, 1);
+        }
+    }
 
     void OnMouseOver()
     {
@@ -41,6 +56,8 @@ public class CardController : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
+                var sr = GetComponent<SpriteRenderer>();
+                sr.color = new Color(0.5f, 0.5f, 0.5f, 1);
                 selected = true;
                 GetComponent<SpriteRenderer>().sortingOrder = 5;
             }
@@ -56,6 +73,8 @@ public class CardController : MonoBehaviour {
                 if (mouseY < borderY)
                 {
                     selected = false;
+                    var sr = GetComponent<SpriteRenderer>();
+                    sr.color = new Color(0.75f, 0.75f, 0.75f, 1);
                     GetComponent<Rigidbody2D>().MovePosition(defaultPosition);
                     GetComponent<SpriteRenderer>().sortingOrder = 0;
                 }
@@ -63,23 +82,9 @@ public class CardController : MonoBehaviour {
                 {
                     // Card is played
                     if (this.cardType == CardType.Minion)
-                    { 
-                        minion = new GameObject();
-                        minion.name = "Minion";
-                        minion.AddComponent<SpriteRenderer>();
-                        minion.AddComponent<Rigidbody2D>();
-                        minion.AddComponent<BoxCollider2D>();
-                        minion.AddComponent<MinionController>();
-                        Sprite sprite = Resources.Load<Sprite>("Sprites/Minion");
+                    {
+                        Instantiate(minion, transform.position, transform.rotation);
 
-                        var sr = minion.GetComponent<SpriteRenderer>();
-                        sr.sprite = sprite;
-                        sr.sortingLayerName = "Foreground";
-                        sr.sortingOrder = 1;
-                        minion.GetComponent<Rigidbody2D>().isKinematic = true;
-                        Vector3 spawnPosition = new Vector3(0, 3, 0);
-                        minion.transform.position = spawnPosition;
-                        selected = false;
                         Destroy(gameObject);
                     }
                 }
