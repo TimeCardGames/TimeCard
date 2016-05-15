@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< d7e7fca9537d53b2883f4d113f933e2616b0e6c6
 guid: 965fedf5295c12e439617326ec1a7b72
 folderAsset: yes
 timeCreated: 1463354362
+=======
+guid: 1506083646113974196713676956668e
+folderAsset: yes
+timeCreated: 1463353165
+>>>>>>> Add player object
 licenseType: Free
 DefaultImporter:
   userData: 

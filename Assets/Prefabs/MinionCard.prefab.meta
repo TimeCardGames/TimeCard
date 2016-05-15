@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< d7e7fca9537d53b2883f4d113f933e2616b0e6c6
 guid: 755a56944f78d0741b51f11b30c13c0c
 timeCreated: 1463354396
+=======
+guid: 4f8463fde3575474794b07ead7261cb1
+timeCreated: 1463353210
+>>>>>>> Add player object
 licenseType: Free
 NativeFormatImporter:
   userData: 
